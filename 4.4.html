@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<title></title>
+<style>
+body {
+	font-family:verdana;
+}
+h1 {
+	color: #770000;
+	font-size: x-large;
+	font-family:Lucida Handwriting;
+}
+thead {
+	background-color: #ffb945;
+	valign: center;
+}
+tbody {
+	background-color:#FFE4B5;
+	border-color: #800000;
+}
+input {
+	color: #8B4513;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div class="container">
+	<form id="tinh-tien-dien">
+	<table cellspacing="0" cellpadding="5" align="center">
+	<thead>
+	<tr>
+		<th colspan="2"><h1>THANH TOÁN TIỀN ĐIỆN</h1></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Tên chủ hộ:</td>
+		<td><input type="text" id="ten-chu-ho" placeholder="Nhập tên chủ hộ"></td>
+	</tr>
+		<td>Chỉ số cũ:</td>
+		<td><input type="number" id="chi-so-cu" placeholder="Nhập chỉ số cũ">(Kw)</td>
+	</tr>
+	<tr>
+		<td>Chỉ số mới:</td>
+		<td><input type="number" id="chi-so-moi" placeholder="Nhập chỉ số mới">(Kw)</td>
+	</tr>
+	<tr>
+		<td>Đơn giá:</td>
+		<td><input type="number" id="don-gia" placeholder="Nhập đơn giá"  value="2000">(VNĐ)</td>
+	</tr>
+	<tr>
+		<td>Số tiền thanh toán</td>
+		<td><input type="number" id="thanh-toan" placeholder="Số tiền thanh toán" disabled="disabled" style="background-color:#FF9999">(VNĐ)</td>
+	</tr>
+	<tr>
+		<td colspan="2"><center><input type="button" onClick="TinhSoTienThanhToan()" value="Tính"></center></td>
+	</tr>
+	</tbody>
+	</table>
+	</form?
+</div>
+</div>
+<script type="text/javascript">
+	function TinhSoTienThanhToan() {
+		var chisocu = document.getElementById('chi-so-cu');
+		var chisomoi = document.getElementById('chi-so-moi');
+		var sotienthanhtoan = (Number(chisomoi.value) - Number(chisocu.value))*2000;
+		//alert (sotienthanhtoan);
+		//return sotienthanhtoan;
+		document.getElementById('thanh-toan').value = sotienthanhtoan;
+	}
+</script>
+</body>
+</html>
